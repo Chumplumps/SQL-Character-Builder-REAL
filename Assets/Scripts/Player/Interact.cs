@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using UnityEngine;
 public class Interact : MonoBehaviour
 {
@@ -59,3 +59,4 @@ public class Interact : MonoBehaviour
         }
     }
 }
+*/

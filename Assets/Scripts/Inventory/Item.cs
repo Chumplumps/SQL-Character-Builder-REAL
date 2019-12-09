@@ -1,27 +1,21 @@
 ﻿using UnityEngine;
-public class Item
+
+public class Item 
 {
-    #region Variables
-    //id of the item for programmers and developers
+    #region Private Variables
     private int _id;
-    //Desplay name and description for players
     private string _name;
     private string _description;
-    //Amount of items of that type...Stackable
     private int _amount;
-    //Buy and Sell value
     private int _value;
-    //Basic Stats
+    private ItemType _type;
+    private Texture2D _icon;
+    private GameObject _mesh;
     private int _damage;
     private int _armour;
     private int _heal;
-    //Display Icon and Mesh
-    private Texture2D _iconName;
-    private GameObject _meshName;
-    //Type of item...for item use
-    private ItemTypes _type;
     #endregion
-    #region Properties
+    #region Public Properties
     public int ID
     {
         get { return _id; }
@@ -47,47 +41,49 @@ public class Item
         get { return _value; }
         set { _value = value; }
     }
-    public int Armour
-    {
-        get { return _armour; }
-        set { _armour = value; }
-    }
     public int Damage
     {
         get { return _damage; }
         set { _damage = value; }
+    }
+    public int Armour
+    {
+        get { return _armour; }
+        set { _armour = value; }
     }
     public int Heal
     {
         get { return _heal; }
         set { _heal = value; }
     }
-    public Texture2D IconName
+    public Texture2D Icon
     {
-        get { return _iconName; }
-        set { _iconName = value; }
+        get { return _icon; }
+        set { _icon = value; }
     }
-    public GameObject MeshName
+    public GameObject ItemMesh
     {
-        get { return _meshName; }
-        set { _meshName = value; }
+        get { return _mesh; }
+        set { _mesh = value; }
     }
-    public ItemTypes ItemType
+    public ItemType Type
     {
         get { return _type; }
         set { _type = value; }
     }
+
     #endregion
 }
-public enum ItemTypes
+public enum ItemType
 {
+    Ingredient,
+    Potion,
+    Scroll,
+    Food,
     Armour,
     Weapon,
-    Potion,
+    Craftable,
     Money,
     Quest,
-    Food,
-    Ingredient,
-    Craftable,
     Misc
 }
